@@ -1,10 +1,12 @@
-package com.pluralsight;
+package com.pluralsight.loops;
+
+import com.pluralsight.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Program {
+public class LoopsProgram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

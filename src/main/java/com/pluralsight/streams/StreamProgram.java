@@ -26,14 +26,10 @@ public class StreamProgram {
         System.out.print("-> Enter a first or last name to search: ");
         String search = scanner.nextLine();
 
-        List<Person> matches = new ArrayList<>();
-        for (Person person : people) {
-            // Check if search is the same as first or last name
-            if (person.getFirstName().equalsIgnoreCase(search) ||
-                    person.getLastName().equalsIgnoreCase(search)) {
-                matches.add(person);
-            }
-        }
+        List<Person> matches = people.stream()
+                .filter(person -> person.getFirstName().equalsIgnoreCase(search)
+                        || person.getLastName().equalsIgnoreCase(search))
+                .toList();
 
         // Display the search result
         System.out.println("\n[MATCHED THE SEARCH]");

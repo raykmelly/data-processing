@@ -40,6 +40,16 @@ public class Program {
         }
 
         // Calculate the average age
+        double sum = 0;
+        for (Person person : people) {
+            sum += person.getAge();
+        }
+
+        double averageAge = sum / people.size();
+        System.out.println("\n[AVERAGE AGE OF ALL PEOPLE]: " + averageAge);
+
+        // Display the oldest person
+
 
         scanner.close();
     }

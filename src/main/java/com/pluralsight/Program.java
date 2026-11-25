@@ -34,7 +34,7 @@ public class Program {
         }
 
         // Display the search result
-        System.out.println("[MATCHED THE SEARCH]");
+        System.out.println("\n[MATCHED THE SEARCH]");
         for (Person person : matches) {
             System.out.println(person.getFirstName() + " " + person.getLastName());
         }
@@ -46,10 +46,37 @@ public class Program {
         }
 
         double averageAge = sum / people.size();
-        System.out.println("\n[AVERAGE AGE OF ALL PEOPLE]: " + averageAge);
+        System.out.println("\n[AVERAGE AGE OF ALL PEOPLE]\n" + averageAge);
+
+        // Search for oldest person
+        Person oldestPerson = null;
+        for (Person person : people) {
+            if (oldestPerson == null) {
+                oldestPerson = person;
+            } else if (person.getAge() > oldestPerson.getAge()) {
+                oldestPerson = person;
+            }
+        }
 
         // Display the oldest person
+        System.out.println("\n[OLDEST PERSON]\n" +
+                oldestPerson.getFirstName() + " " + oldestPerson.getLastName()
+        );
 
+        // Search for youngest person
+        Person youngestPerson = null;
+        for (Person person : people) {
+            if (youngestPerson == null) {
+                youngestPerson = person;
+            } else if (person.getAge() < youngestPerson.getAge()) {
+                youngestPerson = person;
+            }
+        }
+
+        // Display the youngest person
+        System.out.println("\n[YOUNGEST PERSON]\n" +
+                youngestPerson.getFirstName() + " " + youngestPerson.getLastName()
+        );
 
         scanner.close();
     }
